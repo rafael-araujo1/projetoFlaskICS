@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" type="text/css">
+    <title>Participe do evento do século!</title>
+</head>
+<body>
+    <div class="containerIndex">
+        <h1 id="titulo1">VEM AÍ O EVENTO QUE NINGUÉM <br> ESPERAVA!</h1>
+        <a href="{{url_for('register')}}" class="btn-redirect-register">Garanta o seu lugar na fila digital!</a>
+        <h2 id="titulo2">Veja a lista de quem já se inscreveu:</h2>
+        {% for usuario in usuarios %}
+            <div class="usuario">
+                <p><b>{{usuario[0]}}.</b> {{usuario[1]}}</p>
+                <p><b>Email:</b> {{usuario[2]}}</p>
+                <p><b>Tipo da entrada:</b> {{usuario[4]}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

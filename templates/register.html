@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css">
+    <title>Realizar Cadastro</title>
+</head>
+<body>
+    <div class="containerRegister">
+        <form action="{{url_for('register')}}" method="post" id="form-register">
+            <h3>Cadastre-se já</h3>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="reg-nome" required>
+
+            <label for="tipo">Tipo:</label>
+            <select type="text" name="tipo" id="reg-tipo" required>
+                <option value="" disabled selected>Escolha o tipo de entrada</option>
+                <option value="Inteira">Inteira</option>
+                <option value="Meia">Meia</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="reg-email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="reg-senha" required>
+
+            <a href="{{url_for('login')}}">Já possui uma conta?</a>
+
+            <input type="submit" value="Enviar" id="btn-register">
+        </form>
+    </div>
+</body>
+</html>

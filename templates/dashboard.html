@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="usuario-dashboard">
+        <p><b>Posição de Nº {{ user.id }}</b></p>
+        <p><b>Nome:</b> {{ user.nome }}</p>
+        <p><b>Email:</b> {{ user.email }}</p>
+        <p><b>Tipo de entrada:</b> {{ user.tipo }}</p>
+        <form action="{{url_for('logout')}}" method="post">
+            <input type="submit" value="Sair" id="btn-logout">
+        </form>
+    </div>
+</body>
+</html>
